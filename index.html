@@ -14,13 +14,13 @@
       if (document.querySelectorAll('.carousel').length) {
         const carousel = new Siema({
           selector: '.carousel',
-          perPage: 4,
+          perPage: {0: 1, 500: 2, 800: 4},
           loop: true,
           draggable: false
         });
-
-        prevButton.addEventListener("click", () => carousel.prev(4));
-        nextButton.addEventListener("click", () => carousel.next(4));
+        console.log(carousel);
+        prevButton.addEventListener("click", () => carousel.prev(carousel.perPage));
+        nextButton.addEventListener("click", () => carousel.next(carousel.perPage));
       }
     }
     document.addEventListener('DOMContentLoaded', run, false);

@@ -14,13 +14,13 @@
       if (document.querySelectorAll('.carousel').length) {
         const carousel = new Siema({
           selector: '.carousel',
-          perPage: 4,
+          perPage: {0: 1, 500: 2, 800: 4},
           loop: true,
           draggable: false
         });
-
-        prevButton.addEventListener("click", () => carousel.prev(4));
-        nextButton.addEventListener("click", () => carousel.next(4));
+        console.log(carousel);
+        prevButton.addEventListener("click", () => carousel.prev(carousel.perPage));
+        nextButton.addEventListener("click", () => carousel.next(carousel.perPage));
       }
     }
     document.addEventListener('DOMContentLoaded', run, false);
@@ -62,113 +62,113 @@
 
     
     
-      <button id="prevButton">&laquo;</button>
-      <div class="carousel">
-        
-          <a class="gallery" href="../../professional/quake-live-web/02.jpg"><img src="../../professional/quake-live-web/02@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/03.jpg"><img src="../../professional/quake-live-web/03@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/04.jpg"><img src="../../professional/quake-live-web/04@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/05.jpg"><img src="../../professional/quake-live-web/05@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/06.jpg"><img src="../../professional/quake-live-web/06@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/07.jpg"><img src="../../professional/quake-live-web/07@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/08.jpg"><img src="../../professional/quake-live-web/08@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/09.jpg"><img src="../../professional/quake-live-web/09@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/10.jpg"><img src="../../professional/quake-live-web/10@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/11.jpg"><img src="../../professional/quake-live-web/11@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/12.jpg"><img src="../../professional/quake-live-web/12@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/13.jpg"><img src="../../professional/quake-live-web/13@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/14.jpg"><img src="../../professional/quake-live-web/14@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/15.jpg"><img src="../../professional/quake-live-web/15@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/16.jpg"><img src="../../professional/quake-live-web/16@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/17.jpg"><img src="../../professional/quake-live-web/17@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/18.jpg"><img src="../../professional/quake-live-web/18@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/19.jpg"><img src="../../professional/quake-live-web/19@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/20.jpg"><img src="../../professional/quake-live-web/20@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/21.jpg"><img src="../../professional/quake-live-web/21@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/22.jpg"><img src="../../professional/quake-live-web/22@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/23.jpg"><img src="../../professional/quake-live-web/23@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/24.jpg"><img src="../../professional/quake-live-web/24@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/25.jpg"><img src="../../professional/quake-live-web/25@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/26.jpg"><img src="../../professional/quake-live-web/26@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/27.jpg"><img src="../../professional/quake-live-web/27@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/28.jpg"><img src="../../professional/quake-live-web/28@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/29.jpg"><img src="../../professional/quake-live-web/29@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/30.jpg"><img src="../../professional/quake-live-web/30@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/31.jpg"><img src="../../professional/quake-live-web/31@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/32.jpg"><img src="../../professional/quake-live-web/32@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/33.jpg"><img src="../../professional/quake-live-web/33@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/34.jpg"><img src="../../professional/quake-live-web/34@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/35.jpg"><img src="../../professional/quake-live-web/35@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/36.jpg"><img src="../../professional/quake-live-web/36@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/37.jpg"><img src="../../professional/quake-live-web/37@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/38.jpg"><img src="../../professional/quake-live-web/38@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/39.jpg"><img src="../../professional/quake-live-web/39@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/40.jpg"><img src="../../professional/quake-live-web/40@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/41.jpg"><img src="../../professional/quake-live-web/41@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/42.jpg"><img src="../../professional/quake-live-web/42@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/43.jpg"><img src="../../professional/quake-live-web/43@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/44.jpg"><img src="../../professional/quake-live-web/44@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/45.jpg"><img src="../../professional/quake-live-web/45@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/46.jpg"><img src="../../professional/quake-live-web/46@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/47.jpg"><img src="../../professional/quake-live-web/47@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/48.jpg"><img src="../../professional/quake-live-web/48@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/49.jpg"><img src="../../professional/quake-live-web/49@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/50.jpg"><img src="../../professional/quake-live-web/50@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/51.jpg"><img src="../../professional/quake-live-web/51@160x120_crop.jpg" alt=""></a>
-        
-          <a class="gallery" href="../../professional/quake-live-web/52.jpg"><img src="../../professional/quake-live-web/52@160x120_crop.jpg" alt=""></a>
-        
+      <div class="carousel-container">
+        <button id="prevButton">&laquo;</button><div class="carousel">
+          
+            <a class="gallery" href="../../professional/quake-live-web/02.jpg"><img src="../../professional/quake-live-web/02@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/03.jpg"><img src="../../professional/quake-live-web/03@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/04.jpg"><img src="../../professional/quake-live-web/04@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/05.jpg"><img src="../../professional/quake-live-web/05@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/06.jpg"><img src="../../professional/quake-live-web/06@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/07.jpg"><img src="../../professional/quake-live-web/07@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/08.jpg"><img src="../../professional/quake-live-web/08@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/09.jpg"><img src="../../professional/quake-live-web/09@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/10.jpg"><img src="../../professional/quake-live-web/10@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/11.jpg"><img src="../../professional/quake-live-web/11@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/12.jpg"><img src="../../professional/quake-live-web/12@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/13.jpg"><img src="../../professional/quake-live-web/13@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/14.jpg"><img src="../../professional/quake-live-web/14@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/15.jpg"><img src="../../professional/quake-live-web/15@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/16.jpg"><img src="../../professional/quake-live-web/16@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/17.jpg"><img src="../../professional/quake-live-web/17@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/18.jpg"><img src="../../professional/quake-live-web/18@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/19.jpg"><img src="../../professional/quake-live-web/19@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/20.jpg"><img src="../../professional/quake-live-web/20@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/21.jpg"><img src="../../professional/quake-live-web/21@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/22.jpg"><img src="../../professional/quake-live-web/22@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/23.jpg"><img src="../../professional/quake-live-web/23@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/24.jpg"><img src="../../professional/quake-live-web/24@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/25.jpg"><img src="../../professional/quake-live-web/25@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/26.jpg"><img src="../../professional/quake-live-web/26@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/27.jpg"><img src="../../professional/quake-live-web/27@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/28.jpg"><img src="../../professional/quake-live-web/28@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/29.jpg"><img src="../../professional/quake-live-web/29@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/30.jpg"><img src="../../professional/quake-live-web/30@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/31.jpg"><img src="../../professional/quake-live-web/31@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/32.jpg"><img src="../../professional/quake-live-web/32@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/33.jpg"><img src="../../professional/quake-live-web/33@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/34.jpg"><img src="../../professional/quake-live-web/34@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/35.jpg"><img src="../../professional/quake-live-web/35@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/36.jpg"><img src="../../professional/quake-live-web/36@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/37.jpg"><img src="../../professional/quake-live-web/37@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/38.jpg"><img src="../../professional/quake-live-web/38@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/39.jpg"><img src="../../professional/quake-live-web/39@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/40.jpg"><img src="../../professional/quake-live-web/40@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/41.jpg"><img src="../../professional/quake-live-web/41@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/42.jpg"><img src="../../professional/quake-live-web/42@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/43.jpg"><img src="../../professional/quake-live-web/43@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/44.jpg"><img src="../../professional/quake-live-web/44@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/45.jpg"><img src="../../professional/quake-live-web/45@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/46.jpg"><img src="../../professional/quake-live-web/46@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/47.jpg"><img src="../../professional/quake-live-web/47@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/48.jpg"><img src="../../professional/quake-live-web/48@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/49.jpg"><img src="../../professional/quake-live-web/49@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/50.jpg"><img src="../../professional/quake-live-web/50@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/51.jpg"><img src="../../professional/quake-live-web/51@160x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../professional/quake-live-web/52.jpg"><img src="../../professional/quake-live-web/52@160x120_crop.jpg" alt=""></a>
+          
+        </div><button id="nextButton">&raquo;</button>
       </div>
-      <button id="nextButton">&raquo;</button>
     
   </main>
 

@@ -14,6 +14,7 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: 'Merriweather', serif;
+  line-height: 1em;
 }
 
 a {
@@ -40,30 +41,15 @@ p {
   grid-gap: 2em;
 }
 
-.logo {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-nav {
-  font-family: 'Merriweather', serif;
-  grid-column: 1;
-  grid-row: 2;
-}
-
-header {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-main {
-  grid-column: 2;
-  grid-row: 2;
-}
+.logo { grid-column: 1; grid-row: 1; }
+nav { grid-column: 1; grid-row: 2; }
+header { grid-column: 2; grid-row: 1; }
+main { grid-column: 2; grid-row: 2; }
 
 @media only screen and (max-width: 980px) {
   .grid {
     width: 95%;
+    margin: 1em auto;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto auto;
     grid-gap: 1em;
@@ -85,6 +71,7 @@ main {
 /* bottom left nav links */
 
 nav {
+  font-family: 'Merriweather', serif;
   font-size: 18pt;
 }
 
@@ -192,15 +179,33 @@ header h1 {
   flex-grow: 1;
 }
 
+@media only screen and (max-width: 700px) {
+  .project {
+    flex-direction: column;
+  }
+
+  .project a {
+    margin: 0 auto;
+  }
+
+  .project img {
+    margin: 0 auto 0.75em auto;
+  }
+}
+
 /* individual project page */
+
+.carousel-container {
+  text-align: center;
+}
 
 .carousel {
   display: inline-block;
   background-color: black;
-  width: 650px;
-  height: 120px;
+  width: 660px;
+  height: 152px;
   overflow: hidden;
-  padding: 16pt;
+  padding: 16px 0;
 }
 
 .carousel img {
@@ -210,13 +215,21 @@ header h1 {
 }
 
 #prevButton, #nextButton {
-  height: 120px;
-  margin: 16pt 0;
+  width: 48px;
+  height: 152px;
   font-size: 16pt;
   border: 0;
-  background-color: transparent;
+  background-color: black;
   color: #eee;
   vertical-align: top;
+}
+
+@media only screen and (max-width: 800px) {
+  .carousel { width: 325px; }
+}
+
+@media only screen and (max-width: 500px) {
+  .carousel { width: 120px; }
 }
 
 /* lightbox */
