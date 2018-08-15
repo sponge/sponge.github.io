@@ -146,6 +146,10 @@ header p.intro strong {
   color: #afcfff;
 }
 
+main.welcome ul {
+  margin-top: 0;
+}
+
 /* front page intro bullets */
 
 main ul {
