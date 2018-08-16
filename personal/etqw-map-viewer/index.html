@@ -1,7 +1,7 @@
 <!doctype html>
 <head>
   <meta charset="utf-8">
-  <title>ET:QW Map Viewer () — d8d</title>
+  <title>ET:QW Map Viewer (2007) — d8d</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <link href="https://fonts.googleapis.com/css?family=Quicksand:300,700|Merriweather:400,700" rel="stylesheet">
   <link rel="stylesheet" href="../../static/style.css">
@@ -14,7 +14,7 @@
       if (document.querySelectorAll('.carousel').length) {
         const carousel = new Siema({
           selector: '.carousel',
-          perPage: {0: 1, 600: 2, 800: 3},
+          perPage: {0: 1, 600: 2, 810: 3},
           loop: true,
           draggable: false
         });
@@ -44,12 +44,25 @@
     
   <header>
     <h1>ET:QW Map Viewer</h1>
-    
+    2007<br/>
     <div class="actions"><a href="https://hosted.d8d.org/etqwmaps/" >View Project</a><br/></div>
   </header>
   <main class="project-page">
+    <p>Using a console command that would automatically take screenshots in increments, I was able to pretty quickly get screenshots of all the maps in Quake Wars, except for one which used some tricks that wouldn't screenshot correctly. The end result was a pretty cool look at the advantages that Megatexture brought at the time. Area 22 and Refinery are great examples, especially in the mountainous areas.</p>
+
     
     
+      <div class="carousel-container">
+        <button id="prevButton">&laquo;</button><div class="carousel">
+          
+            <a class="gallery" href="../../personal/etqw-map-viewer/00.jpg"><img src="../../personal/etqw-map-viewer/00@213x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../personal/etqw-map-viewer/01.jpg"><img src="../../personal/etqw-map-viewer/01@213x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="../../personal/etqw-map-viewer/02.jpg"><img src="../../personal/etqw-map-viewer/02@213x120_crop.jpg" alt=""></a>
+          
+        </div><button id="nextButton">&raquo;</button>
+      </div>
     
   </main>
 
