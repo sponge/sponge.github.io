@@ -1,0 +1,480 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: #D9D9D9;
+  background-color: #19191C;
+  font-size: 14pt;
+  line-height: 1.5em;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Merriweather', serif;
+  line-height: 1em;
+}
+
+a {
+  color: #afcfff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #8babdb;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+code {
+  background-color: #223;
+  padding: 0 0.25em;
+}
+
+/* grid setup */
+
+.grid {
+  width: 960px;
+  margin: 3em auto;
+  display: grid;
+  grid-template-columns: 150px auto;
+  grid-template-rows: 125px auto;
+  grid-gap: 2em;
+}
+
+.logo { grid-column: 1; grid-row: 1; }
+nav { grid-column: 1; grid-row: 2; }
+header { grid-column: 2; grid-row: 1; }
+main { grid-column: 2; grid-row: 2; }
+
+@media only screen and (max-width: 980px) {
+  .grid {
+    width: 95%;
+    margin: 1em auto;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 1em;
+  }
+
+  .logo { grid-column: 1; grid-row: 1; }
+  nav { grid-column: 1; grid-row: 2; }
+  header { grid-column: 1; grid-row: 3; }
+  main { grid-column: 1; grid-row: 4; }
+}
+
+/* logo */
+@media only screen and (max-width: 980px) {
+  .logo {
+    margin: 0 auto;
+  }
+}
+
+/* bottom left nav links */
+
+nav {
+  font-family: 'Merriweather', serif;
+  font-size: 18pt;
+}
+
+nav h2 {
+  font-size: 18pt;
+  font-weight: normal;
+  margin: 0.5em 0;
+}
+
+nav ul {
+  font-size: 16pt;
+  list-style: none;
+  margin-left: 0.5em;
+}
+
+nav ul li {
+  margin-bottom: 0.5em;
+}
+
+nav a.active {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 980px) {
+  nav {
+    text-align: center;
+  }
+
+  nav * {
+    font-size: 14pt;
+  }
+
+  nav ul {
+    display: inline-block;
+  }
+
+  nav ul li {
+    display: inline-block;
+    margin: 0 0.5em 0 0;
+  }
+
+  nav h2 {
+    display: none;
+  }
+}
+
+/* front page header */
+
+header p.intro {
+  grid-row: 1;
+  font-size: 16pt;
+  font-weight: normal;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  margin-top: 1em;
+  line-height: 1.5em;
+}
+
+@media only screen and (max-width: 980px) {
+  header p.intro {
+    font-size: 14pt;
+  }
+}
+
+header p.intro strong {
+  font-weight: 700;
+  color: #afcfff;
+}
+
+main.welcome ul {
+  margin-top: 0;
+}
+
+/* front page intro bullets */
+
+main ul {
+  width: 80%;
+  margin: 1em auto;
+}
+
+main li {
+  padding-left: 0.5em;
+  margin-bottom: 1em;
+}
+
+/* projects page */
+
+.project {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2em;
+}
+
+header h1 {
+  margin: 0.5em 0 0.25em 0;
+}
+
+.project h2 {
+  margin-bottom: 0.5em;
+}
+
+.project img {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.project .info {
+  display: inline-block;
+  flex-grow: 1;
+}
+
+@media only screen and (max-width: 700px) {
+  .project {
+    flex-direction: column;
+  }
+
+  .project a {
+    margin: 0 auto;
+  }
+
+  .project img {
+    margin: 0 auto 0.75em auto;
+  }
+}
+
+/* individual project page */
+
+.carousel-container {
+  text-align: center;
+}
+
+.carousel {
+  display: inline-block;
+  background-color: black;
+  width: 660px;
+  height: 152px;
+  overflow: hidden;
+  padding: 16px 0;
+}
+
+.carousel img {
+  width: 213px;
+  height: 120px;
+  background-color: #131313;
+}
+
+#prevButton, #nextButton {
+  width: 48px;
+  height: 152px;
+  font-size: 16pt;
+  border: 0;
+  background-color: black;
+  color: #eee;
+  vertical-align: top;
+}
+
+@media only screen and (max-width: 810px) {
+  .carousel { width: 440px; }
+}
+
+@media only screen and (max-width: 600px) {
+  .carousel { width: 240px; }
+}
+
+/* lightbox */
+
+@keyframes lum-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes lum-loader-rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-180deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes lum-loader-before {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.2) translateX(6px);
+  }
+  25% {
+    transform: scale(1.3) translateX(8px);
+  }
+  40% {
+    transform: scale(1.2) translateX(6px);
+  }
+  50% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.8) translateX(6px);
+  }
+  75% {
+    transform: scale(0.7) translateX(8px);
+  }
+  90% {
+    transform: scale(0.8) translateX(6px);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lum-loader-after {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.2) translateX(-6px);
+  }
+  25% {
+    transform: scale(1.3) translateX(-8px);
+  }
+  40% {
+    transform: scale(1.2) translateX(-6px);
+  }
+  50% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.8) translateX(-6px);
+  }
+  75% {
+    transform: scale(0.7) translateX(-8px);
+  }
+  90% {
+    transform: scale(0.8) translateX(-6px);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.lum-lightbox {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.lum-lightbox-inner {
+  top: 2.5%;
+  right: 2.5%;
+  bottom: 2.5%;
+  left: 2.5%;
+}
+
+.lum-lightbox-inner img {
+  position: relative;
+}
+
+.lum-lightbox-inner .lum-lightbox-caption {
+  margin: 0 auto;
+  color: #fff;
+  max-width: 700px;
+  text-align: center;
+}
+
+.lum-loading .lum-lightbox-loader {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 66px;
+  height: 20px;
+  animation: lum-loader-rotate 1800ms infinite linear;
+}
+
+.lum-lightbox-loader:before,
+.lum-lightbox-loader:after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.lum-lightbox-loader:before {
+  left: 0;
+  animation: lum-loader-before 1800ms infinite linear;
+}
+
+.lum-lightbox-loader:after {
+  right: 0;
+  animation: lum-loader-after 1800ms infinite linear;
+  animation-delay: -900ms;
+}
+
+.lum-lightbox.lum-opening {
+  animation: lum-fade 180ms ease-out;
+}
+
+.lum-lightbox.lum-opening .lum-lightbox-inner {
+  animation: lum-fade 180ms ease-out;
+}
+
+.lum-lightbox.lum-closing {
+  animation: lum-fade 300ms ease-in;
+  animation-direction: reverse;
+}
+
+.lum-img {
+  transition: opacity 120ms ease-out;
+}
+
+.lum-loading .lum-img {
+  opacity: 0;
+}
+
+.lum-gallery-button {
+  overflow: hidden;
+  text-indent: 150%;
+  white-space: nowrap;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100px;
+  max-height: 100%;
+  width: 60px;
+  cursor: pointer;
+}
+
+.lum-previous-button {
+  left: 12px;
+}
+
+.lum-next-button {
+  right: 12px;
+}
+
+.lum-gallery-button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  border-top: 4px solid rgba(255, 255, 255, 0.8);
+}
+
+.lum-previous-button:after {
+  transform: translateY(-50%) rotate(-45deg);
+  border-left: 4px solid rgba(255, 255, 255, 0.8);
+  box-shadow: -2px 0 rgba(0, 0, 0, 0.2);
+  left: 12%;
+  border-radius: 3px 0 0 0;
+}
+
+.lum-next-button:after {
+  transform: translateY(-50%) rotate(45deg);
+  border-right: 4px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 2px 0 rgba(0, 0, 0, 0.2);
+  right: 12%;
+  border-radius: 0 3px 0 0;
+}
+
+/* This media query makes screens less than 460px wide display in a "fullscreen"-esque mode. Users can then scroll around inside the lightbox to see the entire image. */
+@media (max-width: 460px) {
+  .lum-lightbox-image-wrapper {
+    display: flex;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .lum-lightbox-caption {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  /* Used to centre the image in the container, respecting overflow: https://stackoverflow.com/a/33455342/515634 */
+  .lum-lightbox-position-helper {
+    margin: auto;
+  }
+    
+  /* .lum-lightbox-inner img {
+    max-width: none;
+    max-height: none;
+  } */
+}

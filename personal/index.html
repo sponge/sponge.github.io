@@ -1,0 +1,182 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Personal Projects — d8d</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,700|Merriweather:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="../static/style.css">
+  <script type="text/javascript" src="../static/Luminous.min.js" defer></script>
+  <script type="text/javascript" src="../static/siema.min.js" defer></script>
+  <script type="text/javascript" defer>
+    function run() {
+      document.querySelectorAll("a.lightbox").forEach(el => new Luminous(el));
+      new LuminousGallery(document.querySelectorAll("a.gallery"), {arrowNavigation: true});
+      if (document.querySelectorAll('.carousel').length) {
+        const carousel = new Siema({
+          selector: '.carousel',
+          perPage: {0: 1, 600: 2, 810: 3},
+          loop: true,
+          draggable: false
+        });
+        prevButton.addEventListener("click", () => carousel.prev(carousel.perPage));
+        nextButton.addEventListener("click", () => carousel.next(carousel.perPage));
+      }
+    }
+    document.addEventListener('DOMContentLoaded', run, false);
+  </script>
+</head>
+<body>
+  <div class="grid">
+    <img class="logo" src="../static/d8d.png"/>
+    <nav>
+      <a  href="../">Home</a>
+      <h2>Projects</h2>
+      <ul class="nav navbar-nav">
+        
+          <li><a  href="../professional/">Professional</a></li>
+        
+          <li><a  class="active" href="../personal/">Personal</a></li>
+        
+          <li><a  href="../pointless/">Pointless</a></li>
+        
+      </ul>
+    </nav>
+    
+  <header>
+    <h1>Personal Projects</h1>
+  </header>
+  <main class="projects-page">
+  
+    <div class="project">
+      
+      
+        
+        
+      
+      
+      <div class="info">
+        <h2>
+          <a href="../personal/es6-project-template/" target=""}>ES6 Project Template</a>
+          <em>(2018)</em>
+        </h2>
+        <p><p>This is my project template for browser-based ES6 projects, lovingly known as "sponge-hates-setting-up-small-js-projects." It is an extremely minimal project template for developing ES6 JavaScript pages in modern browsers.</p>
+</p>
+      </div>
+    </div>
+  
+    <div class="project">
+      
+      
+        
+        
+      
+      
+        <a href="../personal/clive/" target=""><img src="../personal/clive/0@320x180_crop_q85.jpg" alt=""></a>
+      
+      <div class="info">
+        <h2>
+          <a href="../personal/clive/" target=""}>Battlement Defense</a>
+          <em>(2018)</em>
+        </h2>
+        <p><p>A game created for Awful Summer Jam 2018, themed "Unnecessary Sequels." Relive the history of fictional British game developer Clive Sturridge through the ages, with his original hit "Battlement Defence" and it's many needless sequels.</p>
+</p>
+      </div>
+    </div>
+  
+    <div class="project">
+      
+      
+        
+        
+      
+      
+        <a href="../personal/2d-game-engine/" target=""><img src="../personal/2d-game-engine/00@320x180_crop_q85.png" alt=""></a>
+      
+      <div class="info">
+        <h2>
+          <a href="../personal/2d-game-engine/" target=""}>2D Game Engine</a>
+          <em>(2016-)</em>
+        </h2>
+        <p><p>A toy 2D engine written in C++, with mod support through a DLL containing all gamecode. Supports a drawing command set similar to fantasy consoles, but without intentional restrictions. Scripting language support provided through Wren.</p>
+</p>
+      </div>
+    </div>
+  
+    <div class="project">
+      
+      
+        
+        
+      
+      
+        <a href="../personal/e-ink-weather/" target=""><img src="../personal/e-ink-weather/00@320x180_crop_q85.jpg" alt=""></a>
+      
+      <div class="info">
+        <h2>
+          <a href="../personal/e-ink-weather/" target=""}>E-Ink Weather</a>
+          <em>(2018)</em>
+        </h2>
+        <p><p>An e-ink display powered by an ESP8266 that occasionally connects to Wi-Fi to refresh its display with weather, or any other infrequently updating displays.</p>
+</p>
+      </div>
+    </div>
+  
+    <div class="project">
+      
+      
+        
+        
+      
+      
+        <a href="../personal/coreweather/" target=""><img src="../personal/coreweather/00@320x180_crop_q85.png" alt=""></a>
+      
+      <div class="info">
+        <h2>
+          <a href="../personal/coreweather/" target=""}>CoreWeather</a>
+          <em>(2017)</em>
+        </h2>
+        <p><p>A C# script embedded into a Discord bot that generates early 90s style Weather Channel displays.</p>
+</p>
+      </div>
+    </div>
+  
+    <div class="project">
+      
+      
+        
+        
+      
+      
+      <div class="info">
+        <h2>
+          <a href="../personal/quake-live-duel-stats/" target=""}>Quake Live Duel Stats</a>
+          <em>(2017)</em>
+        </h2>
+        <p><p>Analysis of 100,000 Quake Live duel matches, in an attempt to determine competitiveness, and the likelihood of winning over time and score gap.</p>
+</p>
+      </div>
+    </div>
+  
+    <div class="project">
+      
+      
+        
+        
+      
+      
+        <a href="../personal/etqw-map-viewer/" target=""><img src="../personal/etqw-map-viewer/00@320x180_crop_q85.jpg" alt=""></a>
+      
+      <div class="info">
+        <h2>
+          <a href="../personal/etqw-map-viewer/" target=""}>ET:QW Map Viewer</a>
+          <em>(2007)</em>
+        </h2>
+        <p><p>Zoom and pan maps from Splash Damage's 2007 title, Enemy Territory: Quake Wars.</p>
+</p>
+      </div>
+    </div>
+  
+  </main>
+
+  </div>
+</body>
