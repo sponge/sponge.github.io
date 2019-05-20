@@ -1,7 +1,7 @@
 <!doctype html>
 <head>
   <meta charset="utf-8">
-  <title>2D Game Engine (2016-) — d8d</title>
+  <title>Slate2D (2016-) — d8d</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <link href="https://fonts.googleapis.com/css?family=Quicksand:300,700|Merriweather:400,700" rel="stylesheet">
   <link rel="stylesheet" href="../../static/style.css">
@@ -43,13 +43,13 @@
     </nav>
     
   <header>
-    <h1>2D Game Engine</h1>
+    <h1>Slate2D</h1>
     2016-<br/>
     <div class="actions"><a href="https://github.com/sponge/sdlgame/" target="blank">Source Code</a><br/></div>
   </header>
   <main class="project-page">
-    <p>My unnamed 2D game engine (sometimes known as <code>sdlgame</code> since that's the GitHub repo name) has been a long-term on and off personal project since July 2016. It's primarily just been a fun thing to work on, without any real end goal for shipping a game. It also has served to be one of the biggest sources of learning C++ and understanding the consequences of certain lower level designs. It has, however, successfully been used to bring a game from start to completion! <a href="../../personal/clive">Clive Sturridge's Battlement Defense Legacy Collection</a> uses this engine, and the experience of using it was surprisingly pretty good!</p>
-<p>The engine doesn't really prescribe any big opinions on structure or API (there's not even any sort of ECS included) but the biggest inspirations were probably <a href="https://www.lexaloffle.com/pico-8.php">PICO-8</a> and <a href="https://tic.computer/">TIC-80</a>. Fantasy console APIs are a great sweet spot of what most people need for making 2D games, and I just wanted something that has a similar API, but without the other restrictions like code size, or color palettes.</p>
+    <p>My 2D engine, Slate2D, has been a long-term on and off personal project since July 2016. It's primarily just been a fun thing to work on, without any real end goal for shipping a game. It also has served to be one of the biggest sources of learning C++ and understanding the consequences of architectural decisions. Despite its tatus, it has successfully been used to take a game to completion! <a href="../../personal/clive">Clive Sturridge's Battlement Defense Legacy Collection</a> and <a href="../../personal/hot-air">Hot Air</a> use this engine, and the experience of using it was surprisingly pretty good!</p>
+<p>The engine doesn't really prescribe any big opinions on structure or API; there's not even any sort of ECS included. The biggest API inspirations were probably <a href="https://www.lexaloffle.com/pico-8.php">PICO-8</a> and <a href="https://tic.computer/">TIC-80</a>. Fantasy console APIs are a great sweet spot of what most people need for making 2D games, and I just wanted something that has a similar API, without their creative restrictions.</p>
 <p>While the engine originally supports external DLLs for loading game code, the default DLL has now evolved to support the <a href="http://wren.io/">Wren scripting language</a>. Wren has been an absolute delight to use, it feels like a modern Lua without the weirdness, or a little like a tiny modern JavaScript. I started off using Wren in the TIC-80 fantasy console, and knew I wanted to embed it into my engine.</p>
 <p>It is made up of several pre-existing libraries:</p>
 <ul>
@@ -59,16 +59,16 @@
 <li><a href="https://github.com/ocornut/imgui">dear imgui</a> - debugging tools  </li>
 <li><a href="http://sol.gfxile.net/soloud/">SoLoud</a> - audio engine  </li>
 <li><a href="https://github.com/baylej/tmx">TMX C Loader</a> - loading <a href="https://www.mapeditor.org/">Tiled</a> maps</li>
-<li><a href="http://glew.sourceforge.net/">GLEW</a> - GL extension support</li>
+<li><a href="https://github.com/raysan5/raylib/blob/master/src/rlgl.h">rlgl</a> - OpenGL wrapper</li>
 </ul>
-<p><code>sdlgame</code> currently runs on Windows, and web via Emscripten. It has ran on OS X in the past, but it is probably suffering from some bitrot. It probably also runs on Linux, but I haven't bothered to try.</p>
+<p>Slate2D currently runs on Windows, OS X, Linux, and web via Emscripten. Maybe it'll be useful to someone else, someday!</p>
 
     
     
       <div class="carousel-container">
         <button id="prevButton">&laquo;</button><div class="carousel">
           
-            <a class="gallery" href="../../personal/2d-game-engine/00.png"><img src="../../personal/2d-game-engine/00@213x120_crop.png" alt=""></a>
+            <a class="gallery" href="../../personal/slate2d/00.png"><img src="../../personal/slate2d/00@213x120_crop.png" alt=""></a>
           
         </div><button id="nextButton">&raquo;</button>
       </div>
