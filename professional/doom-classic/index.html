@@ -54,6 +54,7 @@
 <p>Unlike most Unity titles, however, none of the game logic or even the rasterization is handled in Unity. The Doom engine itself is entirely deployed as a dynamic library, exposing an interface that which all aspects of I/O (video, audio, input, filesystem, and network). Unity is responsible for feeding in all the inputs, and receives back a buffer containing the on-screen contents that is then blitted to a Unity canvas.</p>
 <p>This means that the port looks and runs exactly like the original games did, albeit at a higher internal resolution. Handling all the different types of inputs and types of controllers becomes a lot simpler, and UI can use Unity's UI system across the whole app, instead of either trying to cram everything into the original game's UI system, or developing one on top of that.</p>
 <p>Split screen is handled by faking a multiplayer match. Since the engine has been modified to allow multiple global states to be instantiated and swapped out at will, the engine can run as many clients as the hardware can handle, driving all of them separately. Networking is handled by just passing packet contents around through a buffer in memory.</p>
+<p>Since release, I've been able to work on fixing both legacy engine issues, and issues that have popped up in our ports in the past, from rendering to gameplay. We've also begun to expand the engine past original limits, and allow users to play curated community levels across all platforms.</p>
 
     
     
