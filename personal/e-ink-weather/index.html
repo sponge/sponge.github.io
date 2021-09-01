@@ -35,7 +35,7 @@
         
           <li><a  href="../../professional/">Professional</a></li>
         
-          <li><a  class="active" href="../../personal/">Personal</a></li>
+          <li><a  class="active" href="../">Personal</a></li>
         
           <li><a  href="../../pointless/">Pointless</a></li>
         
@@ -54,7 +54,7 @@
 <p>Programming the board was pretty simple. I decided to take the route of doing all the rendering on the server side, which meant the client, minus screen libraries, was only around 100 lines. The client just grabs a file from a hardcoded URL, sending an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">ETag</a> in the request that is saved in the EEPROM. This lets the board further save on battery life by not downloading and refreshing an unchanged image. The response is passed straight through to the screen, and then goes to deep sleep for 20 minutes. In this mode, everything is turned off including the CPU; only the Real Time Clock stays running.</p>
 <p>With this update schedule, I get about a <em>month</em> of battery life with my current 2500mAH battery. While research indicated I could probably be getting battery life in the 2-3 month range, I'm not sure how much more I can currently get.</p>
 <p>The server side is a Python script ran from a cron job that dumps a binary file to disk. This is the part that does all the image processing and API calls. The script's output is a buffer of packed pixels, with 8 black or white pixels per byte. This is what lets me dump it right into the e-ink screen's controller on the ESP8266.</p>
-<p>There's probably a lot of other potential things to display on the screen, I just have a weird thing for <a href="../../personal/coreweather">weather displays</a>. The slow refresh time (~7 seconds) to refresh the screen means you probably don't want to refresh too frequently otherwise it'll get annoying, even if power isn't a concern.</p>
+<p>There's probably a lot of other potential things to display on the screen, I just have a weird thing for <a href="../coreweather">weather displays</a>. The slow refresh time (~7 seconds) to refresh the screen means you probably don't want to refresh too frequently otherwise it'll get annoying, even if power isn't a concern.</p>
 <p>This project was a lot of fun, and I hope that somehow in the future I can replace the screen and do something that updates a little more frequently. I really like the idea of having a display that doesn't have a backlight on your desk that blends in.</p>
 
     
@@ -62,9 +62,9 @@
       <div class="carousel-container">
         <button id="prevButton">&laquo;</button><div class="carousel">
           
-            <a class="gallery" href="../../personal/e-ink-weather/00.jpg"><img src="../../personal/e-ink-weather/00@213x120_crop.jpg" alt=""></a>
+            <a class="gallery" href="00.jpg"><img src="00@213x120_crop.jpg" alt=""></a>
           
-            <a class="gallery" href="../../personal/e-ink-weather/01.jpg"><img src="../../personal/e-ink-weather/01@213x120_crop.jpg" alt=""></a>
+            <a class="gallery" href="01.jpg"><img src="01@213x120_crop.jpg" alt=""></a>
           
         </div><button id="nextButton">&raquo;</button>
       </div>

@@ -35,7 +35,7 @@
         
           <li><a  href="../../professional/">Professional</a></li>
         
-          <li><a  class="active" href="../../personal/">Personal</a></li>
+          <li><a  class="active" href="../">Personal</a></li>
         
           <li><a  href="../../pointless/">Pointless</a></li>
         
@@ -48,27 +48,27 @@
     <div class="actions"><a href="https://github.com/sponge/sdlgame/" target="blank">Source Code</a><br/></div>
   </header>
   <main class="project-page">
-    <p>My 2D engine, Slate2D, has been a long-term on and off personal project since July 2016. It's primarily just been a fun thing to work on, without any real end goal for shipping a game. It also has served to be one of the biggest sources of learning C++ and understanding the consequences of architectural decisions. Despite its tatus, it has successfully been used to take a game to completion! <a href="../../personal/clive">Clive Sturridge's Battlement Defense Legacy Collection</a> and <a href="../../personal/hot-air">Hot Air</a> use this engine, and the experience of using it was surprisingly pretty good!</p>
-<p>The engine doesn't really prescribe any big opinions on structure or API; there's not even any sort of ECS included. The biggest API inspirations were probably <a href="https://www.lexaloffle.com/pico-8.php">PICO-8</a> and <a href="https://tic.computer/">TIC-80</a>. Fantasy console APIs are a great sweet spot of what most people need for making 2D games, and I just wanted something that has a similar API, without their creative restrictions.</p>
-<p>While the engine originally supports external DLLs for loading game code, the default DLL has now evolved to support the <a href="http://wren.io/">Wren scripting language</a>. Wren has been an absolute delight to use, it feels like a modern Lua without the weirdness, or a little like a tiny modern JavaScript. I started off using Wren in the TIC-80 fantasy console, and knew I wanted to embed it into my engine.</p>
+    <p>My 2D engine, Slate2D, has been a long-term on and off personal project since July 2016. It's primarily just been a fun thing to work on, without any real end goal for shipping a game. It also has served to be one of the biggest sources of learning C++ and understanding the consequences of architectural decisions. Despite its status, it has successfully been used to take two games to completion! <a href="../clive">Clive Sturridge's Battlement Defense Legacy Collection</a> and <a href="../hot-air">Hot Air</a> use this engine, and the experience of using it was surprisingly pretty good!</p>
+<p>The engine doesn't really prescribe any big opinions on structure or API, you are given the most basic of update and draw callbacks. How you want to handle game logic is entirely up to you. The biggest API inspirations were probably <a href="https://www.lexaloffle.com/pico-8.php">PICO-8</a> and <a href="https://tic.computer/">TIC-80</a>. Fantasy console APIs are a great sweet spot of what most people need for making 2D games, and I just wanted something that has a similar API, but without any designed restrictions.</p>
+<p>Slate2D can be built as a static or dynamic library, exposing a basic C API in a way that can be called into from any language that can use C shared libraries. A built in target containing the QuickJS runtime allows games to be created using modern JavaScript, but with no dependency on the browser environment. Debugging JavaScript through Visual Studio Code is even possible when building from MacOS.</p>
 <p>It is made up of several pre-existing libraries:</p>
 <ul>
 <li><a href="https://www.libsdl.org">SDL</a> - windowing, OpenGL context, input, DLL support</li>
-<li><a href="https://www.wren.io">Wren</a> - embedded scripting language  </li>
+<li><a href="https://bellard.org/quickjs/">QuickJS</a> - embedded scripting language  </li>
 <li><a href="https://icculus.org/physfs/">PhysicsFS</a> - virtual filesystem, zip loading</li>
 <li><a href="https://github.com/ocornut/imgui">dear imgui</a> - debugging tools  </li>
 <li><a href="http://sol.gfxile.net/soloud/">SoLoud</a> - audio engine  </li>
-<li><a href="https://github.com/baylej/tmx">TMX C Loader</a> - loading <a href="https://www.mapeditor.org/">Tiled</a> maps</li>
-<li><a href="https://github.com/raysan5/raylib/blob/master/src/rlgl.h">rlgl</a> - OpenGL wrapper</li>
+<li><a href="https://www.raylib.com/">rlgl</a> - OpenGL wrapper</li>
+<li><a href="https://github.com/ChevyRay/crunch/">crunch</a> - sprite packing</li>
 </ul>
-<p>Slate2D currently runs on Windows, OS X, Linux, and web via Emscripten. Maybe it'll be useful to someone else, someday!</p>
+<p>Slate2D currently runs on Windows, MacOS, Linux, Nintendo Switch, and web via Emscripten. Maybe it'll be useful to someone else, someday!</p>
 
     
     
       <div class="carousel-container">
         <button id="prevButton">&laquo;</button><div class="carousel">
           
-            <a class="gallery" href="../../personal/slate2d/00.png"><img src="../../personal/slate2d/00@213x120_crop.png" alt=""></a>
+            <a class="gallery" href="00.png"><img src="00@213x120_crop.png" alt=""></a>
           
         </div><button id="nextButton">&raquo;</button>
       </div>
