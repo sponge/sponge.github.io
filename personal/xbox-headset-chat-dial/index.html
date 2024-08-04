@@ -1,0 +1,69 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Xbox Headset Chat Dial (2021) — d8d</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,700|Merriweather:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/style.css">
+  <script type="text/javascript" src="../../static/Luminous.min.js" defer></script>
+  <script type="text/javascript" src="../../static/siema.min.js" defer></script>
+  <script type="text/javascript" defer>
+    function run() {
+      document.querySelectorAll("a.lightbox").forEach(el => new Luminous(el));
+      new LuminousGallery(document.querySelectorAll("a.gallery"), {arrowNavigation: true});
+      if (document.querySelectorAll('.carousel').length) {
+        const carousel = new Siema({
+          selector: '.carousel',
+          perPage: {0: 1, 600: 2, 810: 3},
+          loop: true,
+          draggable: false
+        });
+        prevButton.addEventListener("click", () => carousel.prev(carousel.perPage));
+        nextButton.addEventListener("click", () => carousel.next(carousel.perPage));
+      }
+    }
+    document.addEventListener('DOMContentLoaded', run, false);
+  </script>
+</head>
+<body>
+  <div class="grid">
+    <img class="logo" src="../../static/d8d.png"/>
+    <nav>
+      <a  href="../../">Home</a>
+      <h2>Projects</h2>
+      <ul class="nav navbar-nav">
+        
+          <li><a  href="../../professional/">Professional</a></li>
+        
+          <li><a  class="active" href="../">Personal</a></li>
+        
+          <li><a  href="../../pointless/">Pointless</a></li>
+        
+      </ul>
+    </nav>
+    
+  <header>
+    <h1>Xbox Headset Chat Dial</h1>
+    2021<br/>
+    <div class="actions"><a href="https://github.com/sponge/xbox-headset-chat-dial" target="blank">Source Code</a><br/></div>
+  </header>
+  <main class="project-page">
+    <p>The <a href="https://www.xbox.com/en-US/accessories/headsets/xbox-wireless-headset">Xbox Wireless Headset</a> is a great, relatively cheap wireless headset for gaming. When using it on an Xbox, the right ear cup rotates to adjust volume, and the left ear cup controls the split between game and voice. When using the headset under Windows, the right cup still controls the audio, but the left year controlling the split does nothing. With seemingly no update on the horizon to support this, I started to look into how it works.</p>
+<p>My initial suspicion was that it is being handled entirely by the OS. It wouldn't make much sense to try and setup a second channel on the headset to send audio to, and the complexities that would entail. Using <a href="https://desowin.org/usbpcap/">USBPcap</a> I was able to figure out that some sort of update packet was sent when either ear cup was rotated, and this contained a readout of the current position of the controls.</p>
+<p>Since I was already using USBPcap, the hacky but easy solution was just to use USBPcap's external capture feature and read from the named pipe inside Python. There may be a better way to hook into the USB messages, but that is way out of my field of knowledge. Once I was able to read out the volume status, it was just a matter of figuring out how to control the application specific audio to find and adjust the volume for <code>discord.exe</code>.</p>
+<p>I was surprised that this basically works! It is a pretty useful little utility, and I still hope that it will someday be officially supported.</p>
+
+    
+    
+      <div class="carousel-container">
+        <button id="prevButton">&laquo;</button><div class="carousel">
+          
+            <a class="gallery" href="screenshot.png"><img src="screenshot@213x120_crop.png" alt=""></a>
+          
+        </div><button id="nextButton">&raquo;</button>
+      </div>
+    
+  </main>
+
+  </div>
+</body>

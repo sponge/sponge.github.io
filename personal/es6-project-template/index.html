@@ -1,0 +1,74 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>ES6 Project Template (2018) — d8d</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,700|Merriweather:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/style.css">
+  <script type="text/javascript" src="../../static/Luminous.min.js" defer></script>
+  <script type="text/javascript" src="../../static/siema.min.js" defer></script>
+  <script type="text/javascript" defer>
+    function run() {
+      document.querySelectorAll("a.lightbox").forEach(el => new Luminous(el));
+      new LuminousGallery(document.querySelectorAll("a.gallery"), {arrowNavigation: true});
+      if (document.querySelectorAll('.carousel').length) {
+        const carousel = new Siema({
+          selector: '.carousel',
+          perPage: {0: 1, 600: 2, 810: 3},
+          loop: true,
+          draggable: false
+        });
+        prevButton.addEventListener("click", () => carousel.prev(carousel.perPage));
+        nextButton.addEventListener("click", () => carousel.next(carousel.perPage));
+      }
+    }
+    document.addEventListener('DOMContentLoaded', run, false);
+  </script>
+</head>
+<body>
+  <div class="grid">
+    <img class="logo" src="../../static/d8d.png"/>
+    <nav>
+      <a  href="../../">Home</a>
+      <h2>Projects</h2>
+      <ul class="nav navbar-nav">
+        
+          <li><a  href="../../professional/">Professional</a></li>
+        
+          <li><a  class="active" href="../">Personal</a></li>
+        
+          <li><a  href="../../pointless/">Pointless</a></li>
+        
+      </ul>
+    </nav>
+    
+  <header>
+    <h1>ES6 Project Template</h1>
+    2018<br/>
+    <div class="actions"><a href="https://github.com/sponge/sponge-hates-setting-up-small-js-projects" target="blank">View Source</a><br/></div>
+  </header>
+  <main class="project-page">
+    <p><code>sponge-hates-setting-up-small-js-projects</code> is an ES6 project template that is intended to provide the absolute minimum of setup for developing ES6-based JavaScript projects that run in modern browsers. It does not seek to provide anything beyond what is required to create and bundle a webapp using HTML, JS, and CSS. The lack of these extras doesn't indicate any real support against these concepts, but rather just the desire to have the smallest possible starting point. Extending the configuration and adding new modules is very much recommended.</p>
+<h2>What's Included</h2>
+<ul>
+<li>Babel, configured with <code>babel-preset-env</code> and defaults.</li>
+<li>Webpack, configured to provide the following:<ul>
+<li>Clean the output directory.</li>
+<li>Copy all files from <code>static</code> to the bundle output.</li>
+<li>HTML Webpack Plugin, configured by default for index.html</li>
+<li>Mini CSS Extract Plugin, configured to pack style.css with a hash for cache busting.</li>
+<li>JavaScript packing running through <code>babel-loader</code>, outputting a single script.js with a hash for cache busting.</li>
+</ul>
+</li>
+<li>ESLint, using the ESLint Recommended preset with some light customization. No NPM scripts are included for ESLint, with the intent being that you'll use tools within editors for running ESLint. (I use Visual Studio Code's ESLint extension to manage this)</li>
+<li>NPM scripts for development server and packaging builds.</li>
+<li>.gitignore setup with GitHub JS defaults</li>
+</ul>
+<p>No solutions are included for testing, templating, or CSS pre-processing. These can, however, easily be added to the dependencies through <code>npm install --save</code> or <code>--save-dev</code>. Clone the project, reset the git repo, and then run <code>npm install</code> to install all the dependencies. Use <code>npm start</code> to run a development server, and <code>npm build</code> to output a bundled build to the <code>dist</code> folder.</p>
+
+    
+    
+  </main>
+
+  </div>
+</body>

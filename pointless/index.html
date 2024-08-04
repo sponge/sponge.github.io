@@ -1,0 +1,233 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Pointless Projects — d8d</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,700|Merriweather:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="../static/style.css">
+  <script type="text/javascript" src="../static/Luminous.min.js" defer></script>
+  <script type="text/javascript" src="../static/siema.min.js" defer></script>
+  <script type="text/javascript" defer>
+    function run() {
+      document.querySelectorAll("a.lightbox").forEach(el => new Luminous(el));
+      new LuminousGallery(document.querySelectorAll("a.gallery"), {arrowNavigation: true});
+      if (document.querySelectorAll('.carousel').length) {
+        const carousel = new Siema({
+          selector: '.carousel',
+          perPage: {0: 1, 600: 2, 810: 3},
+          loop: true,
+          draggable: false
+        });
+        prevButton.addEventListener("click", () => carousel.prev(carousel.perPage));
+        nextButton.addEventListener("click", () => carousel.next(carousel.perPage));
+      }
+    }
+    document.addEventListener('DOMContentLoaded', run, false);
+  </script>
+</head>
+<body>
+  <div class="grid">
+    <img class="logo" src="../static/d8d.png"/>
+    <nav>
+      <a  href="../">Home</a>
+      <h2>Projects</h2>
+      <ul class="nav navbar-nav">
+        
+          <li><a  href="../professional/">Professional</a></li>
+        
+          <li><a  href="../personal/">Personal</a></li>
+        
+          <li><a  class="active" href="./">Pointless</a></li>
+        
+      </ul>
+    </nav>
+    
+  <header>
+    <h1>Pointless Projects</h1>
+  </header>
+  <main class="projects-page">
+  
+    <div class="project">
+      
+      
+        
+        
+        
+      
+      
+        <a href="https://github.com/sponge/dogbot" target="blank"><img src="discord-dog-post-bot/00@320x180_crop_q85.jpg" alt=""></a>
+      
+      <div class="info">
+        <h2>
+          <a href="https://github.com/sponge/dogbot" target="blank"}>Discord Dog Post Bot</a>
+          <em>(2018)</em>
+        </h2>
+        <p><p>A quick and dumb Discord bot that continually edits a message in a given channel on a timer, purporting to be the server's rules. It's actually just dogs from my Tumblr <a href="http://goodass.dog">That's a Good-Ass Dog</a>. It is merely a vehicle for exposing people to pictures of dogs.</p>
+</p>
+      </div>
+    </div>
+  
+    <div class="project">
+      
+      
+        
+        
+        
+      
+      
+        <a href="http://hosted.d8d.org/ps2/" target="blank"><img src="ps2-crystal-clock/1@320x180_crop_q85.jpg" alt=""></a>
+      
+      <div class="info">
+        <h2>
+          <a href="http://hosted.d8d.org/ps2/" target="blank"}>PS2 Crystal Clock</a>
+          <em>(2018)</em>
+        </h2>
+        <p><p>The background of the PS2 BIOS is amazing, which of course means that I needed to try and recreate it. I was able to get pretty close, but couldn't figure out the screen-space reflections. Built using <a href="https://threejs.org/">three.js</a> which was a little frustrating to work with, especially with materials. <a href="https://github.com/sponge/ps2bios">Source code</a> available.</p>
+</p>
+      </div>
+    </div>
+  
+    <div class="project">
+      
+      
+        
+        
+        
+      
+      
+        <a href="https://hosted.d8d.org/ebdog/" target=""><img src="ebdog/00@320x180_crop_q85.png" alt=""></a>
+      
+      <div class="info">
+        <h2>
+          <a href="https://hosted.d8d.org/ebdog/" target=""}>EBDog</a>
+          <em>(2017)</em>
+        </h2>
+        <p><p>Another weird little Earthbound related thing. This one features state-of-the-art dog AI in order to simulate the activities of a dog, and prevents dogs from doing the same dog stuff in the same space. Put a number in the URL's hash and reload to change the amount of dogs. Uses <a href="https://phaser.io/">Phaser</a> for rendering.  <a href="https://github.com/sponge/ebdog">Source code</a> available.</p>
+</p>
+      </div>
+    </div>
+  
+    <div class="project">
+      
+      
+        
+        
+        
+      
+      
+        <a href="https://hosted.d8d.org/tony/" target=""><img src="tony/00@320x180_crop_q85.png" alt=""></a>
+      
+      <div class="info">
+        <h2>
+          <a href="https://hosted.d8d.org/tony/" target=""}>Tony</a>
+          <em>(2017)</em>
+        </h2>
+        <p><p>Tony gets what he deserves in this riveting story.</p>
+</p>
+      </div>
+    </div>
+  
+    <div class="project">
+      
+      
+        
+        
+        
+      
+      
+        <a href="https://spongeserv.com/" target=""><img src="bread/00@320x180_crop_q85.png" alt=""></a>
+      
+      <div class="info">
+        <h2>
+          <a href="https://spongeserv.com/" target=""}>Bread</a>
+          <em>(2016)</em>
+        </h2>
+        <p><p>I like having weird splash screens for my domains. The bread's speed will increase and decrease along with the load average on my VPS. Uses the amazing <a href="https://github.com/gjtorikian/Earthbound-Battle-Backgrounds-JS">Earthbound Battle Backgrounds JS</a> for the backgrounds.</p>
+</p>
+      </div>
+    </div>
+  
+    <div class="project">
+      
+      
+        
+        
+        
+      
+      
+        <a href="https://hosted.d8d.org/ebclock/" target=""><img src="ebclock/00@320x180_crop_q85.png" alt=""></a>
+      
+      <div class="info">
+        <h2>
+          <a href="https://hosted.d8d.org/ebclock/" target=""}>EBClock</a>
+          <em>(2012)</em>
+        </h2>
+        <p><p>An HTML5 version (it's technically HTML5 if it uses the audio tag!) of a Flash thing I made a very long time ago. The scene fades from day to night depending on the system clock. The original Flash version was somehow somewhat popular on 4chan.</p>
+</p>
+      </div>
+    </div>
+  
+    <div class="project">
+      
+      
+        
+        
+        
+      
+      
+        <a href="https://hosted.d8d.org/treesandnoise/" target=""><img src="trees-and-noise/00@320x180_crop_q85.jpg" alt=""></a>
+      
+      <div class="info">
+        <h2>
+          <a href="https://hosted.d8d.org/treesandnoise/" target=""}>trees &amp; noise</a>
+          <em>(2012)</em>
+        </h2>
+        <p><p>Some stock photography with embedded YouTube audio. I actually used this for a while just to have some random ambient noise, but there's probably better ways to do this now. It's still kind of neat, though.</p>
+</p>
+      </div>
+    </div>
+  
+    <div class="project">
+      
+      
+        
+        
+        
+      
+      
+        <a href="http://403forbidden.org/" target="blank"><img src="403-forbidden/00@320x180_crop_q85.png" alt=""></a>
+      
+      <div class="info">
+        <h2>
+          <a href="http://403forbidden.org/" target="blank"}>403 Forbidden</a>
+          <em>(2010)</em>
+        </h2>
+        <p><p>The hottest website of 1997, in 2010. Made for a Quake clan of co-workers and friends.</p>
+</p>
+      </div>
+    </div>
+  
+    <div class="project">
+      
+      
+        
+        
+        
+      
+      
+        <a href="https://hosted.d8d.org/rolling/" target=""><img src="rolling-start/00@320x180_crop_q85.png" alt=""></a>
+      
+      <div class="info">
+        <h2>
+          <a href="https://hosted.d8d.org/rolling/" target=""}>Rolling Start</a>
+          <em>(2010)</em>
+        </h2>
+        <p><p>A JavaScript bookmarklet (remember those?) to play Rolling Start from Daytona USA on any webpage. I had to extract the scrolling banner from stitching together emulator screenshots. It was a huge pain.</p>
+</p>
+      </div>
+    </div>
+  
+  </main>
+
+  </div>
+</body>

@@ -1,0 +1,84 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Quake (2021) — d8d</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,700|Merriweather:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/style.css">
+  <script type="text/javascript" src="../../static/Luminous.min.js" defer></script>
+  <script type="text/javascript" src="../../static/siema.min.js" defer></script>
+  <script type="text/javascript" defer>
+    function run() {
+      document.querySelectorAll("a.lightbox").forEach(el => new Luminous(el));
+      new LuminousGallery(document.querySelectorAll("a.gallery"), {arrowNavigation: true});
+      if (document.querySelectorAll('.carousel').length) {
+        const carousel = new Siema({
+          selector: '.carousel',
+          perPage: {0: 1, 600: 2, 810: 3},
+          loop: true,
+          draggable: false
+        });
+        prevButton.addEventListener("click", () => carousel.prev(carousel.perPage));
+        nextButton.addEventListener("click", () => carousel.next(carousel.perPage));
+      }
+    }
+    document.addEventListener('DOMContentLoaded', run, false);
+  </script>
+</head>
+<body>
+  <div class="grid">
+    <img class="logo" src="../../static/d8d.png"/>
+    <nav>
+      <a  href="../../">Home</a>
+      <h2>Projects</h2>
+      <ul class="nav navbar-nav">
+        
+          <li><a  class="active" href="../">Professional</a></li>
+        
+          <li><a  href="../../personal/">Personal</a></li>
+        
+          <li><a  href="../../pointless/">Pointless</a></li>
+        
+      </ul>
+    </nav>
+    
+  <header>
+    <h1>Quake</h1>
+    2021<br/>
+    <div class="actions"><a href="https://store.steampowered.com/app/2310/QUAKE/" target="blank">PC (Steam)</a><br/>
+
+<a href="https://www.nintendo.com/games/detail/quake-switch/" target="blank">Nintendo Switch</a><br/></div>
+  </header>
+  <main class="project-page">
+    <p>I worked on the 2021 rereleases of Quake from start until finish, launched at QuakeCon 2021 for the 25th anniversary of Quake. These ports were created using Night Dive Studios' KEX Engine, running on top of the original Quake code. This helped us get the game running on all of the platforms we wanted to, however getting the game running is only the first step. This port ended up being quite a large project, with close to 100 levels over five games worth of content, including a brand new episode created for the 25th anniversary.</p>
+<p>My responsibilities on the project was all over the place. All of the menus were recreated using <a href="https://github.com/ocornut/imgui">Dear Imgui</a> which ended up being a mixed bag for user-facing game UIs, but the simplicity of Quake's UI requirements still won out in the end.</p>
+<p>The original Quake engine had no support for localization, so I was responsible for implementing French, Italian, German, Spanish, and Russian language support in all parts of the game and UI. In addition to requiring some network protocol changes, every location in the game's built in scripting language QuakeC that deals with strings had to be found.</p>
+<p>I also dove into the original development archives to find as many of the original audio clips in 22KHz vs the original 11KHz, and I was able to recover over 90% of the audio in the original game. I also found and cleaned up the original source files for the levels in the game, getting them ready to receive improved lighting and fixes.</p>
+<p>With so many platforms, having to manually build all the packages was starting to really drag down development time. I setup build scripts and configured a Jenkins CI instance to get the game building ready for release packages on every commit, and worked on improving collecting and bundling up all the files required to run the game in a final build.</p>
+<p>Online multiplayer was included, courtesy of Azure PlayFab, and I was involved with much of the setup and configuration of the multiplayer services side of the game. Quake was the first cross-play game that Bethesda shipped, with cross-play supported across all platforms. Dedicated servers running on Linux had to be built and deployed with Docker, and I was responsible for automating the Docker container creation.</p>
+<p>Quake has always been a huge part of my gaming life, and it has been amazing getting the opportunity to not only work on a port, but also be able to push the bounds of how much work and improvements we can make to the original game. Quake has never been ported to anything since the N64 and Sega Saturn, and being able to put my mark with the biggest port that id has put out has quite actually been a childhood dream come true.</p>
+
+    
+    
+      <div class="carousel-container">
+        <button id="prevButton">&laquo;</button><div class="carousel">
+          
+            <a class="gallery" href="logo.jpg"><img src="logo@213x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="ss-3e486cb2013c5c6de74806826a26367194f452f3.jpg"><img src="ss-3e486cb2013c5c6de74806826a26367194f452f3@213x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="ss-537a59320f0fa4eafcefe94df2e8fee00277fdeb.jpg"><img src="ss-537a59320f0fa4eafcefe94df2e8fee00277fdeb@213x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="ss-b66140ab826c4152db50bbdd7bd144a69e16571c.jpg"><img src="ss-b66140ab826c4152db50bbdd7bd144a69e16571c@213x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="ss-b7d9bbc1036fe011e076eb70d57cfc6251863a4c.jpg"><img src="ss-b7d9bbc1036fe011e076eb70d57cfc6251863a4c@213x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="ss-e31f19558199f97dd40cdf8655e67e28018d849c.jpg"><img src="ss-e31f19558199f97dd40cdf8655e67e28018d849c@213x120_crop.jpg" alt=""></a>
+          
+        </div><button id="nextButton">&raquo;</button>
+      </div>
+    
+  </main>
+
+  </div>
+</body>

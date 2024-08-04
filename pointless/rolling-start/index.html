@@ -1,0 +1,57 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Rolling Start (2010) — d8d</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,700|Merriweather:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/style.css">
+  <script type="text/javascript" src="../../static/Luminous.min.js" defer></script>
+  <script type="text/javascript" src="../../static/siema.min.js" defer></script>
+  <script type="text/javascript" defer>
+    function run() {
+      document.querySelectorAll("a.lightbox").forEach(el => new Luminous(el));
+      new LuminousGallery(document.querySelectorAll("a.gallery"), {arrowNavigation: true});
+      if (document.querySelectorAll('.carousel').length) {
+        const carousel = new Siema({
+          selector: '.carousel',
+          perPage: {0: 1, 600: 2, 810: 3},
+          loop: true,
+          draggable: false
+        });
+        prevButton.addEventListener("click", () => carousel.prev(carousel.perPage));
+        nextButton.addEventListener("click", () => carousel.next(carousel.perPage));
+      }
+    }
+    document.addEventListener('DOMContentLoaded', run, false);
+  </script>
+</head>
+<body>
+  <div class="grid">
+    <img class="logo" src="../../static/d8d.png"/>
+    <nav>
+      <a  href="../../">Home</a>
+      <h2>Projects</h2>
+      <ul class="nav navbar-nav">
+        
+          <li><a  href="../../professional/">Professional</a></li>
+        
+          <li><a  href="../../personal/">Personal</a></li>
+        
+          <li><a  class="active" href="../">Pointless</a></li>
+        
+      </ul>
+    </nav>
+    
+  <header>
+    <h1>Rolling Start</h1>
+    2010<br/>
+    <div class="actions"><a href="https://hosted.d8d.org/rolling/" >View Project</a><br/></div>
+  </header>
+  <main class="project-page">
+    
+    
+    
+  </main>
+
+  </div>
+</body>
