@@ -1,0 +1,81 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>DOOM + DOOM II (2024) — d8d</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,700|Merriweather:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="../../static/style.css">
+  <script type="text/javascript" src="../../static/Luminous.min.js" defer></script>
+  <script type="text/javascript" src="../../static/siema.min.js" defer></script>
+  <script type="text/javascript" defer>
+    function run() {
+      document.querySelectorAll("a.lightbox").forEach(el => new Luminous(el));
+      new LuminousGallery(document.querySelectorAll("a.gallery"), {arrowNavigation: true});
+      if (document.querySelectorAll('.carousel').length) {
+        const carousel = new Siema({
+          selector: '.carousel',
+          perPage: {0: 1, 600: 2, 810: 3},
+          loop: true,
+          draggable: false
+        });
+        prevButton.addEventListener("click", () => carousel.prev(carousel.perPage));
+        nextButton.addEventListener("click", () => carousel.next(carousel.perPage));
+      }
+    }
+    document.addEventListener('DOMContentLoaded', run, false);
+  </script>
+</head>
+<body>
+  <div class="grid">
+    <img class="logo" src="../../static/d8d.png"/>
+    <nav>
+      <a  href="../../">Home</a>
+      <h2>Projects</h2>
+      <ul class="nav navbar-nav">
+        
+          <li><a  class="active" href="../">Professional</a></li>
+        
+          <li><a  href="../../personal/">Personal</a></li>
+        
+          <li><a  href="../../pointless/">Pointless</a></li>
+        
+      </ul>
+    </nav>
+    
+  <header>
+    <h1>DOOM + DOOM II</h1>
+    2024<br/>
+    <div class="actions"></div>
+  </header>
+  <main class="project-page">
+    <p>The Unity ports of DOOM were very solid ways to play the game, but five years after their initial release, we had an opportunity to update them. Ported to Nightdive's KEX Engine, we also were able to add PlayStation 5 and Xbox Series support, which brought 4K 120hz rendering due to a major overhaul to the renderer, adding multithreading support. We were also able to license a clean-room implementation of Boom and MBF21, making the port even more capable of playing modern WADs. Finally, an online mod database, allowing console players to get in on the fun of the DOOM modding community.</p>
+<p>For this project, we used <a href="https://coherent-labs.com/">Coherent Labs</a> <a href="https://coherent-labs.com/products/coherent-gameface/">Gameface</a>, an HTML/JS based UI library that runs everywhere. This means that the original 1993 UI was completely torn out, and replaced with what is basically a glorified web app, but without the massive overhead of Proton and a full web browser. I was responsible for the whole UI system, from the framework to content.</p>
+<p>The frontend also uses <a href="https://www.solidjs.com">Solid JS</a>, a very fast UI library that doesn't have all the baggage that React brings along. Even though we're running a full JS engine and HTML renderer, the UI still basically runs in under a millisecond each frame.</p>
+<p>This project brought some interesting challenges. A completely custom implementation of gamepad navigation had to be written, since tab index navigation is too simple and does not have the level of control needed. Navigation supports horizontal, vertical, and grid based layouts. Handling gamepad actions uses custom events that bubble from the selected UI element upward. This lets me attach per-page handlers like previous and next page, or go back, while allowing widgets to either act as sliders, carousels, or whatever other actions are needed, without affecting other elements. Modals need to be able to pop up, and not send input to what's undeneath. All of this also needs to work with a mouse and keyboard, in addition to a controller.</p>
+<p>The id Vault and Bethesda.net mods sections were more traditional frontend applications: image viewers, browsing through content, async requests to third party services. These were funneled through native JavaScript functions; the UI doesn't make any web requests to outside resources on its own.</p>
+<p>What we ended up with was a simple set of reusable components, with the ability to spin up new menus, add or remove options, and generally iterate very quickly. I'm very happy with the way the UI turned out, for how often game UI programming feels to be in the stone ages, the amount of tricks I had at my disposal felt limitless.</p>
+
+    
+    
+      <div class="carousel-container">
+        <button id="prevButton">&laquo;</button><div class="carousel">
+          
+            <a class="gallery" href="logo.jpg"><img src="logo@213x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="ss-3714172f6c26be6aacd532e550fd11a6fe02063d.jpg"><img src="ss-3714172f6c26be6aacd532e550fd11a6fe02063d@213x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="ss-806877de2ec13666c33ec2eed02055585543f23f.jpg"><img src="ss-806877de2ec13666c33ec2eed02055585543f23f@213x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="ss-e44c3198e8e748665b4574092319f28a564277e8.jpg"><img src="ss-e44c3198e8e748665b4574092319f28a564277e8@213x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="ss-e46818d3d16bdb6d8f07d0ca23c1dc05d0073b93.jpg"><img src="ss-e46818d3d16bdb6d8f07d0ca23c1dc05d0073b93@213x120_crop.jpg" alt=""></a>
+          
+            <a class="gallery" href="ss-e89a593007f181c3aa0209e3e4c2a63c9cbfc34a.jpg"><img src="ss-e89a593007f181c3aa0209e3e4c2a63c9cbfc34a@213x120_crop.jpg" alt=""></a>
+          
+        </div><button id="nextButton">&raquo;</button>
+      </div>
+    
+  </main>
+
+  </div>
+</body>
